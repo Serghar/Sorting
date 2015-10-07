@@ -1,6 +1,7 @@
 <?php
 	function bubble($arr)
 	{
+		$start = microtime_float(); //Start time for timer
 		for($x = count($arr) - 1; $x > 0; $x--)
 		{
 			for($y = 0; $y < $x; $y++)
@@ -12,6 +13,9 @@
 				}
 			}
 		}
+		$end = microtime_float(); //End time for timer
+		$totalTime = $end - $start;
+		echo "This operation took " . $totalTime . " seconds to complete. ";
 		return $arr;
 	}
 
@@ -23,12 +27,17 @@
 		$arr[$y] = $temp;
 	}
 
+	function microtime_float()
+	{
+	    list($usec, $sec) = explode(" ", microtime());
+	    return ((float)$usec + (float)$sec);
+	}
+
 	//just here to test the function
 	$randArray = array();
 	for($x = 1; $x <= 10; $x++)
 	{
 		array_push($randArray, mt_rand(0, 10000));
 	}
-	var_dump($randArray);
 	var_dump(bubble($randArray));
 ?>
