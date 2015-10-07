@@ -1,4 +1,5 @@
 <?php
+	//Insertion sort
 	function insertion($arr)
 	{
 		for ($i = 1; $i < count($arr); $i++)
@@ -15,7 +16,7 @@
 		return $arr;
 	}
 	
-	//just here 
+	//just here to test the function
 	$randArray = array();
 	for($x = 1; $x <= 10; $x++)
 	{
