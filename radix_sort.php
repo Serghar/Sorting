@@ -82,7 +82,11 @@
 	}
 
 	//Testing Testing
-	$array = array(45,64,23,6614,123,15);
-	var_dump(radix($array));
+	$randArray = array();
+	for($x = 1; $x <= 10000; $x++)
+	{
+		array_push($randArray, mt_rand(0, 10000));
+	}
+	var_dump(radix($randArray));
 	
 ?>
