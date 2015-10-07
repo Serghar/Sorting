@@ -1,5 +1,5 @@
 <?php
-	//Selection sort function
+	//Selection sort function using an array passed by reference
 	function sel_sort(&$array)
 	{
 		$runtime = 0; //Number of times a conditional statement is run
