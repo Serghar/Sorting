@@ -7,14 +7,20 @@
 		$start = microtime_float(); //Start time for timer
 		for($x = 0; $x < count($array); $x++)
 		{
-			for($y = $x + 1; $y < count($array); $y++)
+			$minValue = null;
+			$minKey = null;
+			for($y = $x; $y < count($array); $y++)
 			{
-				if($array[$x] > $array[$y])
+				if($min == null || $min > $array[$y])
 				{
-					swap($array, $x, $y);
+					$minKey = $y;
+					$minValue = $array[$y];
 				}
+				$array[minKey]
 				$runtime++;
 			}
+			$array[$minKey] = $array[$x];
+			$array[$x] = $minValue;
 		}
 		$end = microtime_float(); //End time for timer
 		$totalTime = $end - $start;
@@ -22,14 +28,6 @@
 		echo "It had ". $runtime . " if/else statements execute.";
 	}
 
-
-	//Take an array passed by reference and swaps 2 index position values 
-	function swap(&$arr, $x, $y)
-	{
-		$temp = $arr[$x];
-		$arr[$x] = $arr[$y];
-		$arr[$y] = $temp;
-	}
 
 	function microtime_float()
 	{
