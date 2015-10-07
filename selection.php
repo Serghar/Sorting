@@ -11,12 +11,12 @@
 			$minKey = null;
 			for($y = $x; $y < count($array); $y++)
 			{
-				if($min == null || $min > $array[$y])
+				if($minValue == null || $minValue > $array[$y])
 				{
 					$minKey = $y;
 					$minValue = $array[$y];
 				}
-				$array[minKey]
+				$array[$minKey];
 				$runtime++;
 			}
 			$array[$minKey] = $array[$x];
