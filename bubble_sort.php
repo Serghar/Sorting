@@ -35,7 +35,7 @@
 
 	//just here to test the function
 	$randArray = array();
-	for($x = 1; $x <= 10; $x++)
+	for($x = 1; $x <= 10000; $x++)
 	{
 		array_push($randArray, mt_rand(0, 10000));
 	}
