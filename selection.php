@@ -72,11 +72,11 @@
 	}
 
 	$randArray = array();
-	for($x = 1; $x <= 1000; $x++)
+	for($x = 1; $x <= 10000; $x++)
 	{
 		array_push($randArray, mt_rand(0, 10000));
 	}
 	sel_sort($randArray);
-	var_dump($randArray);
+	//var_dump($randArray);
 
 ?>
