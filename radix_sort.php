@@ -4,6 +4,7 @@
 	//Radix Sorting Function
 	function radix($arr)
 	{
+		$start = microtime_float(); //Start time for timer
 		//Set up a count array for the middle operation of the sort
 		$countArr = array(0,0,0,0,0,0,0,0,0,0);
 
@@ -68,7 +69,9 @@
 		{
 			$arr[$x] = (int)$arr[$x];
 		}
-
+		$end = microtime_float(); //End time for timer
+		$totalTime = $end - $start;
+		echo "This operation took " . $totalTime . " seconds to complete. ";
 		return $arr;
 	}
 
@@ -79,6 +82,12 @@
 		{
 			$arr[$x] = 0;
 		}
+	}
+
+	function microtime_float()
+	{
+	    list($usec, $sec) = explode(" ", microtime());
+	    return ((float)$usec + (float)$sec);
 	}
 
 	//Testing Testing
